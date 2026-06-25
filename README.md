@@ -50,11 +50,13 @@
 可以使用内置脚本创建：
 
 ```powershell
-python C:\Users\moindy\.codex\skills\autore-codex\scripts\new_re_case.py `
+python <codex_home>\skills\autore-codex\scripts\new_re_case.py `
   --case zidan `
-  --root D:\BaiduNetdiskDownload\test\relink `
-  --target D:\BaiduNetdiskDownload\test\relink\zidan\Relink.exe
+  --root .\relink `
+  --target .\relink\zidan\Relink.exe
 ```
+
+脚本默认只会把目标文件记录为相对路径或文件名，避免把本机用户名、磁盘目录、临时目录等信息写进可上传的 Markdown。
 
 ## 使用方式
 
