@@ -25,7 +25,7 @@ def safe_display_path(target: Path, root: Path, include_local_paths: bool) -> st
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Create a reusable RE case analysis folder.")
-    parser.add_argument("--case", required=True, help="Case name, for example zidan or 0618")
+    parser.add_argument("--case", required=True, help="Case name, for example demo or sample01")
     parser.add_argument("--root", type=Path, default=Path.cwd(), help="Root directory where <case>analysis will be created")
     parser.add_argument("--target", type=Path, help="Optional target binary to hash and record")
     parser.add_argument("--force", action="store_true", help="Allow using an existing analysis directory")
