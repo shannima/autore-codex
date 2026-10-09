@@ -59,3 +59,20 @@ Use these roles to divide a reverse-engineering task. Treat them as responsibili
 - Safe to parallelize: static read-only analysis, historical writeup comparison, log review, protocol schema reading, offline dump inspection.
 - Do not parallelize: running the same sample, attaching debugger/Frida, GUI clicking, clearing state, killing processes, modifying target files, writing final patches.
 - If a subagent asks to perform live dynamic work while another controller is active, stop and reassign the task.
+
+## Handoff Contract
+
+Read-only workers return a compact packet: assigned question, target/module hash,
+observed facts with artifact paths or Evidence IDs, hypotheses, failed attempts,
+and the next proposed action. An address must state whether it is VA, RVA, or a
+file offset and identify the image it belongs to.
+
+Workers write separate scratch artifacts. The main controller alone merges
+`case.json`, `evidence.json`, `STATE.md`, and the final report; evidence registration
+is single-writer, not a concurrent append service.
+
+To transfer live control, the old controller first stops issuing commands and
+records PID, active debugger/hook sessions, outstanding breakpoints, modified
+state, latest run ID and recovery steps. The new controller acknowledges the
+handoff before acting. If session ownership is uncertain, inspect it before
+attaching again. Do not infer that a timed-out worker released the target.

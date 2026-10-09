@@ -1,4 +1,4 @@
 interface:
   display_name: "AutoRE Codex"
-  short_description: "Reusable workflow for RE challenge analysis"
-  default_prompt: "Use $autore-codex to analyze this reverse-engineering challenge and produce evidence-backed steps."
+  short_description: "Evidence-driven RE cases, checkpoints, and reproducible writeups"
+  default_prompt: "Use $autore-codex to analyze or resume this reverse-engineering case, verify the requested result, and produce a reproducible writeup with evidence."
