@@ -1,122 +1,54 @@
 # RE Writeup Template
 
-```markdown
-# <Case Name> Writeup
+Copy the sections needed for the case. Replace every placeholder; keep unrun checks explicitly marked as not run.
 
-## Target
+````markdown
+# <Case> Writeup
 
-- Path:
-- Size:
-- SHA256:
-- Architecture:
-- Protector/packer:
-- Runtime child:
+## 结果
 
-## Goal
+- 状态：in_progress / blocked / verified / failed
+- 成功条件与实际观察：
+- 未验证内容：
 
-Describe the exact success condition.
+## 目标与环境
 
-Reject false positives:
+- 样本相对路径、大小、SHA256：
+- 架构、保护/壳、启动器与子进程：
+- OS、工具版本、网络/时间假设：
+- 基线 run ID、实验 run ID：
 
-- Login page:
-- Splash/update page:
-- Empty/manual container:
-- Unrelated module/page:
+## 分析与证据
 
-## Summary
+| Finding | Evidence IDs | 观察/推断 | 置信度与局限 |
+| --- | --- | --- | --- |
+| F-001 | E-001 | | |
 
-Short final method:
+| 模块 SHA256 | VA / RVA / 文件偏移（注明类型） | 运行时基址 | 用途 | Evidence ID |
+| --- | --- | --- | --- | --- |
+| | | | | |
 
-1. 
-2. 
-3. 
+## 方法
 
-## Environment
+记录从输入到结果的实际路径，以及选择该方法的证据。
+只保留会影响复现或避免重试的失败路径。
 
-- OS:
-- Tools:
-- Date/time assumptions:
-- Network assumptions:
+## 验证
 
-## Static Analysis
-
-Key findings:
-
-| Purpose | Address/RVA | Evidence |
-| --- | --- | --- |
-|  |  |  |
-
-Important strings/endpoints:
-
-```text
-
-```
-
-## Dynamic Analysis
-
-Baseline behavior:
-
-```text
-
-```
-
-Important runtime events:
-
-```text
-
-```
-
-## Bypass Or Reconstruction
-
-Chosen strategy:
-
-```text
-
-```
-
-Why this strategy:
-
-- 
-
-Rejected approaches:
-
-- 
-
-## Verification
-
-Proof logs:
-
-```text
-
-```
-
-Proof screenshots:
-
-```text
-
-```
-
-Window/output proof:
-
-```text
-
-```
-
-## Reproduction
-
-Commands:
+- 证据完整性检查结果：
+- 行为证明：输入、输出、功能操作；GUI 另记 PID/class/title/截图。
+- 排除的伪阳性：登录页、启动页、空容器、无关子模块。
+- 稳定性：实际时长/心跳周期，或不适用的原因。
+- 干净基线复现：已运行的命令与结果，或未运行原因。
 
 ```powershell
-
+# 填写实际复现命令
 ```
 
-Files:
+## 文件与恢复
 
-```text
-
-```
-
-## Notes And Risks
-
-- 
-```
+- 脚本、日志、截图、dump 的相对链接及 Evidence IDs：
+- 修改的资源、原始备份、恢复命令：
+- 恢复是否执行及验证结果：
+- 后续唯一明确动作或具体阻塞：
+````

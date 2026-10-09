@@ -73,3 +73,14 @@ Use this checklist to keep RE cases reproducible.
 - Key addresses
 - Final reproduction path
 - Remaining caveats
+
+## Resume And Handoff
+
+- `case.json` target identity still matches the analyzed binary
+- `STATE.md` records current controller, failed hypotheses and next action
+- Each proof belongs to an identified run, target/module hash and PID when relevant
+- Findings cite existing Evidence IDs; hypotheses remain labeled
+- `case_evidence.py check <case-root> --strict` result is recorded
+- Original files/state and specific rollback steps are preserved
+- Clean-baseline reproduction is run, or explicitly marked not run with a reason
+- Integrity checks are not substituted for proof of the requested behavior
